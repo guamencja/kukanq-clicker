@@ -1,7 +1,10 @@
 .glitch{
     background-color: black;
+
+    /*  wielkość glitcha  */
     width: 250px;
     height: 45px;
+
     display: none;
     animation-name: scare;
     animation-duration: 0.6s;
@@ -9,7 +12,7 @@
     position: absolute;
 }
 
-@keyframes scare {
+@keyframes scare { /* animacja - zmienianie kolorow glitcha */
     0%{
         background-color: black;
     }
