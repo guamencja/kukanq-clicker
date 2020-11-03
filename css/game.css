@@ -1,8 +1,11 @@
 .gameWindow {
-    background-color: black;
+    background: url("../img/day.jpg");
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover;
     color: white;
     display: none;
-    text-align: center;
+    text-align: center; /*ide robic dzien i noc */
     animation-fill-mode: forwards;
     min-height: 100vh;
     min-width: 100vw;
@@ -10,6 +13,17 @@
     position: absolute;
     left: 0;
     top: 0;
+}
+
+#kasztanowiec {
+    background-image: url("../img/drzewokukankowe.png");
+    width: 468px;
+    height: 360px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%; 
+    margin-right: -50%;
 }
 
 @keyframes gameAppear { /* znowu animacja */
