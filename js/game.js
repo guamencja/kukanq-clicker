@@ -36,3 +36,23 @@ setInterval(function () {
         night();
 }, 480000);
 
+// klikanie
+var checked = false;
+function click() {
+    // sprawdzanie czy użytkownik ma kuksztany, bo inaczej by zwróciło NaN i żeby nie sprawdzało przy każdym kliknięciu
+    if (!checked)   
+        if (typeof localStorage.kuksztans != "string" || parseInt(localStorage.kuksztans)<=0) {
+            localStorage.setItem("kuksztans", 1);
+            checked = true;
+            return;
+        }
+    
+    $("#kasztanowiec").style.width = "515px";
+    $("#kasztanowiec").style.height = "396px";
+    setTimeout(() => {
+        $("#kasztanowiec").style.width = "468px";
+        $("#kasztanowiec").style.height = "360px";
+    }, 60);
+    localStorage.kuksztans++;
+}
+$("#kasztanowiec").addEventListener("click", (event) => click(event));

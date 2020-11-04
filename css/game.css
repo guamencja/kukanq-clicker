@@ -17,6 +17,9 @@
 
 #kasztanowiec {
     background-image: url("../img/drzewokukankowe.png");
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover;
     width: 468px;
     height: 360px;
     position: absolute;
@@ -24,6 +27,8 @@
     transform: translate(-50%, -50%);
     left: 50%; 
     margin-right: -50%;
+    cursor: pointer;
+    transition: all 0.17s;
 }
 
 @keyframes gameAppear { /* znowu animacja */
