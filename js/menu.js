@@ -26,6 +26,7 @@ function game() {
 
 function newGame() { // funkcja rozpoczynająca nową grę
     localStorage.setItem("gameStarted", true);
+    localStorage.removeItem("night");
     game();
     setTimeout(function () { // animacja
         $(".main_menu").style.display = "none";
