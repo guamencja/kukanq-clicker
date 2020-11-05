@@ -41,8 +41,8 @@ var checked = false;
 function click() {
     // sprawdzanie czy użytkownik ma kuksztany, bo inaczej by zwróciło NaN i żeby nie sprawdzało przy każdym kliknięciu
     if (!checked)   
-        if (typeof localStorage.kuksztans != "string" || parseInt(localStorage.kuksztans)<=0) {
-            localStorage.setItem("kuksztans", 1);
+        if (typeof localStorage.chestnuts != "string" || parseInt(localStorage.chestnuts)<=0) {
+            localStorage.setItem("chestnuts", 1);
             checked = true;
             return;
         }
@@ -53,6 +53,6 @@ function click() {
         $("#kasztanowiec").style.width = "468px";
         $("#kasztanowiec").style.height = "360px";
     }, 60);
-    localStorage.kuksztans++;
+    localStorage.chestnuts++;
 }
 $("#kasztanowiec").addEventListener("click", (event) => click(event));
