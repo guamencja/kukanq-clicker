@@ -75,3 +75,4 @@ function click() {
     localStorage.chestnuts++;
 }
 $("#kasztanowiec").addEventListener("click", (event) => click(event));
+document.body.onkeyup = (e) => {if(e.keyCode == 32 || e.key === " ") click()};
