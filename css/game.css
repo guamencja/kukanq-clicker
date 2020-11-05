@@ -31,6 +31,27 @@
     transition: all 0.17s;
 }
 
+.falling_kasztan {
+    width: 50px;
+    height: 50px;
+    background-image: url("../img/kasztan1.png");
+    background-size: cover;
+    opacity: 0.85;
+    animation-name: kasztanRotation;
+    animation-duration: 1s;
+    transition: all 0.6s;
+    position: absolute;
+}
+
+@keyframes kasztanRotation {
+    0%{
+        transform: rotate(1deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
 @keyframes gameAppear { /* znowu animacja */
     0%{
         transform: scaleY(0);

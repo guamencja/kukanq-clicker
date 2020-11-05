@@ -47,12 +47,31 @@ function click() {
             return;
         }
     
+    // animacja przybliżenia
     $("#kasztanowiec").style.width = "515px";
     $("#kasztanowiec").style.height = "396px";
     setTimeout(() => {
         $("#kasztanowiec").style.width = "468px";
         $("#kasztanowiec").style.height = "360px";
     }, 60);
+
+    // spadający kukanek
+    let sk = document.createElement("div");
+    sk.setAttribute("class", "falling_kasztan");
+    sk.style.top = Math.floor(Math.random() * 260) + "px";
+    sk.style.left = Math.floor(Math.random() * 368) + "px";
+    if (Math.floor(Math.random() * 50) > 25) {
+        sk.style.backgroundImage = "url(\"./img/kasztan2.png\")";
+    }
+    $("#kasztanowiec").appendChild(sk);
+    setTimeout(function(){
+        sk.style.top = "360px";
+        sk.style.opacity = 0
+        setTimeout(function() {
+            sk.remove();
+        }, 200);
+    }, 200);
+
     localStorage.chestnuts++;
 }
 $("#kasztanowiec").addEventListener("click", (event) => click(event));
