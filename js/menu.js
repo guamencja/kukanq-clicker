@@ -22,6 +22,9 @@ function game() {
     var gameScript = document.createElement('script');
     gameScript.src = './js/game.js';
     document.head.appendChild(gameScript);
+    var zadluzenieScript = document.createElement('script');
+    zadluzenieScript.src = './js/zadluzenie.js';
+    document.head.appendChild(zadluzenieScript);
 }
 
 function newGame() { // funkcja rozpoczynająca nową grę
