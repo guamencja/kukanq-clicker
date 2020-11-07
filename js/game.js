@@ -55,16 +55,19 @@ function click() {
         $("#kasztanowiec").style.height = "360px";
     }, 60);
 
+    localStorage.chestnuts++;
+    
     // spadający kukanek
     let sk = document.createElement("div");
     sk.setAttribute("class", "falling_kasztan");
     sk.style.top = Math.floor(Math.random() * 260) + "px";
     sk.style.left = Math.floor(Math.random() * 368) + "px";
+    zadl = verifyKasztan();
     if (Math.floor(Math.random() * 50) > 25) {
-        if (verifyKasztan() == true){
+        if (zadl == true){
             sk.style.backgroundImage = "url('./img/kasztan3.png')";
-        }
-        else{
+            localStorage.chestnuts-=2;
+        } else {
             sk.style.backgroundImage = "url(\"./img/kasztan2.png\")";
         }
     }
@@ -76,8 +79,6 @@ function click() {
             sk.remove();
         }, 200);
     }, 200);
-
-    localStorage.chestnuts++;
 }
 $("#kasztanowiec").addEventListener("click", (event) => click(event));
 document.body.onkeyup = (e) => { if (e.keyCode == 32 || e.key === " ") click() };
