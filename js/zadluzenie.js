@@ -1,5 +1,3 @@
-'use strict';
-
 let glitc;
 let glitcspeed = 3000;
 let effect3 = false;
