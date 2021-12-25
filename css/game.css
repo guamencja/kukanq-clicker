@@ -1,11 +1,12 @@
 .gameWindow {
     background: url("../img/day.jpg");
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-repeat: no-repeat;
     background-size: cover;
     color: white;
     display: none;
-    text-align: center; /*ide robic dzien i noc */
+    text-align: center;
+    /*ide robic dzien i noc */
+    /* fascynujące */
     animation-fill-mode: forwards;
     min-height: 100vh;
     min-width: 100vw;
@@ -17,15 +18,14 @@
 
 #kasztanowiec {
     background-image: url("../img/drzewokukankowe.png");
-    background-repeat: no-repeat; 
-    background-attachment: fixed; 
+    background-repeat: no-repeat;
     background-size: cover;
     width: 468px;
     height: 360px;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    left: 50%; 
+    left: 50%;
     margin-right: -50%;
     cursor: pointer;
     transition: all 0.17s;
@@ -44,20 +44,24 @@
 }
 
 @keyframes kasztanRotation {
-    0%{
+    0% {
         transform: rotate(1deg);
     }
-    100%{
+
+    100% {
         transform: rotate(360deg);
     }
 }
 
-@keyframes gameAppear { /* znowu animacja */
-    0%{
+@keyframes gameAppear {
+
+    /* znowu animacja */
+    0% {
         transform: scaleY(0);
         filter: opacity(0.5);
     }
-    100%{
+
+    100% {
         transform: scaleY(1.0);
         filter: opacity(1);
     }

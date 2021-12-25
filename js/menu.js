@@ -12,23 +12,23 @@ let glit = setInterval(glitchAppear, 3000); // dodawanie glitchy
 
 function game() {
     // animacja
-    $(".main_menu").style.animationName = "slideOut"; 
+    $(".main_menu").style.animationName = "slideOut";
     $(".main_menu").style.animationDuration = "1s";
-    $(".main_menu").style.animationIterationCount = "1"; 
+    $(".main_menu").style.animationIterationCount = "1";
     clearInterval(glit); // usuwanie glitchy
 
     // ładowanie plików game.js i game.css
     $('head').innerHTML += '<link rel="stylesheet" type="text/css" href="./css/game.css">';
-    var gameScript = document.createElement('script');
-    gameScript.src = './js/game.js';
-    document.head.appendChild(gameScript);
-    var zadluzenieScript = document.createElement('script');
+    let gameScript = document.createElement('script'); // ogl to tworzymy nowy skrypt
+    gameScript.src = './js/game.js'; // dajemy żeby się ładował z tej lokalizacji
+    document.head.appendChild(gameScript); // i dodajemy go do <head>
+    let zadluzenieScript = document.createElement('script'); // to samo co wczesniej
     zadluzenieScript.src = './js/zadluzenie.js';
     document.head.appendChild(zadluzenieScript);
 }
 
 function newGame() { // funkcja rozpoczynająca nową grę
-    localStorage.setItem("gameStarted", true);
+    localStorage.setItem("gameStarted", true); // czyszczenie poprzedniego save'a
     localStorage.removeItem("night");
     localStorage.removeItem("chestnuts");
     game();
