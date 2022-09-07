@@ -4,11 +4,16 @@ body {
 }
 
 #game {
+    /* sizing */
     position: absolute;
     min-width: 100vw;
     min-height: 100vh;
     left: 0;
     top: 0;
+
+    /* duplicating fix, the image's set in the load func */
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 #chestnut_tree {
