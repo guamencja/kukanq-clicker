@@ -1,6 +1,14 @@
 body {
+    font-family: sans-serif;
+
     user-select: none;
     overflow: hidden;
+}
+
+#counter {
+    color: white;
+    font-size: 64px;
+    text-align: center;
 }
 
 #game {
