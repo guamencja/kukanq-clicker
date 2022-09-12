@@ -55,3 +55,49 @@ body {
     width: 515px;
     height: 396px;
 }
+
+#pops {
+    /* centering */
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+
+    /* sizing */
+    width: 468px;
+    height: 360px;
+
+    /* fix chestnuts spawning behind the tree */
+    pointer-events: none;
+}
+
+.pop {
+    /* sizing */
+    position: absolute;
+
+    width: 60px;
+    height: 50px;
+
+    /* pop */
+    background-image: url("./img/chestnut.png");
+    background-size: cover;
+
+    /* animation */
+    animation-name: popRotation;
+    animation-duration: 1s;
+
+    /* animation smoothness */
+    transition: all 0.6s;
+}
+
+@keyframes popRotation {
+    0% {
+        opacity: 0.8;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}

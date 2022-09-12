@@ -2,6 +2,9 @@
 const $ = (h) => {
     return document.querySelector(h);
 }
+const random = (h) => {
+    return Math.floor(Math.random() * h);
+}
 
 // game functionality
 let chestnuts = 0;
@@ -17,14 +20,31 @@ function load() {
     $("#counter").innerHTML = chestnuts;
     $("#game").style.backgroundImage = `url("./img/${isDay() ? "day" : "night"}.jpg")`;
     
-    // saving
+    // saving in case of some error
     setInterval(() => {
         localStorage.setItem("chestnuts", chestnuts);
     }, 60000)
 }
+
+function newPop() {
+    const pop = document.createElement("div");
+    pop.className = "pop";
+
+    // random spawn
+    pop.style.left = `${random(468)}px`;
+    pop.style.top = `${random(360)}px`;
+
+    setTimeout(() => { // todo: find an other way to remove those pops to not create a setTimeout every single time
+        pop.remove();
+    }, random(500) + 500);
+
+    return pop;
+}
+
 // when clicked
 $("#chestnut_tree").onclick = () => {
     $("#counter").innerHTML = ++chestnuts;
+    $("#pops").appendChild(newPop());
 }
 
 load();
